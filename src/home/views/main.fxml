@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.MainController">
+   <children>
+      
+      <HBox prefHeight="442.0" prefWidth="687.0">
+         <children>
+
+            <!--sidebar-->
+            <VBox prefHeight="442.0" prefWidth="332.0" style="-fx-background-color: #000000;">
+               <children>
+                  <VBox prefHeight="17.0" prefWidth="276.0" />
+                  <VBox prefHeight="149.0" prefWidth="227.0">
+                     <children>
+                        <ImageView fitHeight="151.0" fitWidth="276.0">
+                           <image>
+                              <Image url="@../images/ikea_logo.png" />
+                           </image>
+                        </ImageView>
+                     </children></VBox>
+                  <VBox prefHeight="62.0" prefWidth="227.0" />
+
+                  <Button fx:id="home_button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="33.0" prefWidth="281.0" styleClass="button_menu" stylesheets="@../styles/main_stylesheet.css" text="Home">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" top="5.0" />
+                     </padding>
+                  </Button>
+
+                  <Button fx:id="orderDesk_button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#onOrderDeskButtonClick" prefHeight="33.0" prefWidth="301.0" styleClass="button_menu" stylesheets="@../styles/main_stylesheet.css" text="Order Desk">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" top="5.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+
+            <!--pages-->
+            <Pane prefHeight="442.0" prefWidth="467.0">
+               <children>
+                  <Pane fx:id="home_page" prefHeight="442.0" prefWidth="428.0" style="-fx-background-color: #187bcd;" />
+                  <Pane fx:id="orderDesk_page" prefHeight="442.0" prefWidth="428.0" style="-fx-background-color: #ffffff;" />
+               </children>
+            </Pane>
+
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
