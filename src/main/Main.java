@@ -11,4 +11,10 @@ public class Main {
 
 
     }
+
+    public void runOrder(){
+        WoodWorker mng = new WoodWorker();
+        ConfigReader cfg = new ConfigReader("config.cfg");
+        mng.manageSteps(cfg.getDesiredDesks());
+    }
 }

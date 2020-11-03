@@ -1,9 +1,12 @@
 package main;
 
+import java.util.Observable;
+
 public class WoodWorker {
     public volatile int wood = 0;
     public volatile int legs = 0, tops = 0, shelves = 0, desks = 0;
     long start, end;
+
     public void manageSteps(int desiredDesks) {
 
         Thread w = new Thread(new Runnable() {
