@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public abstract class Furniture {
 
-    private String furnitureName;
+    protected String furnitureName;
     public final Lock lock = new ReentrantLock();
 
     public Furniture(String furnitureName){

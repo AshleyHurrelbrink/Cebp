@@ -1,12 +1,21 @@
 package other_implementation.furniture;
 
+import java.util.ArrayList;
+
 public class Leg extends Furniture {
 
-    private Wood wood1, wood2;
+    private ArrayList<Wood> wood;
 
-    public Leg(Wood wood1, Wood wood2, String furnitureName) {
+    public Leg(ArrayList<Wood> wood, String furnitureName) {
         super(furnitureName);
-        this.wood1 = wood1;
-        this.wood2 = wood2;
+        this.wood = wood;
+    }
+
+    public String toString(){
+        String components="";
+        for(Wood w : wood){
+            components.concat(w.furnitureName+", ");
+        }
+        return furnitureName+ ": "+ components + ";";
     }
 }

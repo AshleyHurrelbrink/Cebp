@@ -12,18 +12,6 @@ public class Resource {
         this.resource=resource;
     }
 
-    public boolean checkForResource(){
-        return false;
-    }
-
-    public boolean popResource(){
-        return false;
-    }
-
-    public boolean pushResource(Furniture res){
-        resource.add(res);
-        return false;
-    }
 
     public boolean isEmpty(){
         if(resource.isEmpty()) return true;
@@ -36,6 +24,14 @@ public class Resource {
 
     public void removeFurniture(Furniture furniture){
         resource.remove(furniture);
+    }
+
+    public int getSize(){
+        return resource.size();
+    }
+
+    public void pushResource(Furniture furniture){
+        resource.add(furniture);
     }
 }
 

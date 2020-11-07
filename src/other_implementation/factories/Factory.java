@@ -10,11 +10,13 @@ public abstract class Factory implements Runnable {
 
     public final Lock lock = new ReentrantLock();
     protected boolean full;
-    private int count;
+    protected int count;
+    protected String nameType;
 
-    public Factory(){
+    public Factory(String nameType){
         this.full = false;
         this.count = 0;
+        this.nameType=nameType;
     }
 
     public void setFull(){
@@ -27,5 +29,16 @@ public abstract class Factory implements Runnable {
 
     public abstract Furniture create();
     public abstract void addResource(Furniture furniture);
-    public abstract void gatherResources();
+
+    public void printLocked(String message){
+        System.out.println(nameType +" LOCKED: " + message);
+    }
+
+    public void printNotLocked(String message){
+        System.out.println(nameType +" NOT LOCKED: " + message);
+    }
+
+    public void printCreated(String message){
+        System.out.println(nameType +" Created+Added: " + message);
+    }
 }
