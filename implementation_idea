@@ -1,0 +1,20 @@
+Resources: Wood, Shelf, Top, Leg
+Factories: ShelfFactory, TopFactory, LegFactory, DeskFactory, WoodFactory
+Manager: Ikea
+
+Main:
+    nr of desired desks
+    start factory threads
+
+Ikea:
+    resource arrays: WoodArray, LegArray, TopArray, ShelfArray, DeskArray
+    -> each has limited room for resources
+    -> we can only add to DeskArray, never extract
+    methods: addResourceByName, removeResourceByName, countResourceByName, getIkea(singleton), printAllResources
+
+Factory class template:
+    -> maybe abstract class ???
+    -> extend Runnable
+    methods: run
+
+
