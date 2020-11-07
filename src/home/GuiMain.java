@@ -13,6 +13,7 @@ public class GuiMain extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("views/main.fxml"));
         primaryStage.setTitle("IkeaDesks");
         Scene scene = new Scene(root, 700, 442);
+        primaryStage.resizableProperty().setValue(false);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

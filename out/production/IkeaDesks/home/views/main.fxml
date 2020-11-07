@@ -2,34 +2,39 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.MainController">
    <children>
       
       <HBox prefHeight="442.0" prefWidth="687.0">
          <children>
 
             <!--sidebar-->
-            <VBox prefHeight="442.0" prefWidth="332.0" style="-fx-background-color: #000000;">
+            <VBox prefHeight="442.0" prefWidth="224.0" style="-fx-background-color: #000000;">
                <children>
-                  <VBox prefHeight="17.0" prefWidth="276.0" />
+                  <VBox prefHeight="29.0" prefWidth="276.0" />
                   <VBox prefHeight="149.0" prefWidth="227.0">
                      <children>
-                        <ImageView fitHeight="151.0" fitWidth="276.0">
+                        <ImageView fitHeight="124.0" fitWidth="276.0">
                            <image>
                               <Image url="@../images/ikea_logo.png" />
                            </image>
                         </ImageView>
                      </children></VBox>
-                  <VBox prefHeight="62.0" prefWidth="227.0" />
+                  <VBox prefHeight="52.0" prefWidth="276.0" />
 
-                  <Button fx:id="home_button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="33.0" prefWidth="281.0" styleClass="button_menu" stylesheets="@../styles/main_stylesheet.css" text="Home">
+                  <Button fx:id="home_button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="36.0" prefWidth="276.0" styleClass="button_menu" stylesheets="@../styles/main_stylesheet.css" text="Home">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -38,7 +43,7 @@
                      </padding>
                   </Button>
 
-                  <Button fx:id="orderDesk_button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#onOrderDeskButtonClick" prefHeight="33.0" prefWidth="301.0" styleClass="button_menu" stylesheets="@../styles/main_stylesheet.css" text="Order Desk">
+                  <Button fx:id="orderDesk_button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#onOrderDeskButtonClick" prefHeight="36.0" prefWidth="276.0" styleClass="button_menu" stylesheets="@../styles/main_stylesheet.css" text="Order Desk">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -53,7 +58,80 @@
             <Pane prefHeight="442.0" prefWidth="467.0">
                <children>
                   <Pane fx:id="home_page" prefHeight="442.0" prefWidth="428.0" style="-fx-background-color: #187bcd;" />
-                  <Pane fx:id="orderDesk_page" prefHeight="442.0" prefWidth="428.0" style="-fx-background-color: #ffffff;" />
+                  <Pane fx:id="orderDesk_page1" layoutX="-1.0" prefHeight="442.0" prefWidth="439.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Button id="sumbitNrDesks_button" fx:id="submitNrDesk_button" alignment="BOTTOM_LEFT" layoutX="107.0" layoutY="266.0" mnemonicParsing="false" onAction="#onSubmitNrDeskButtonClick" prefHeight="36.0" prefWidth="223.0" styleClass="button_menu" stylesheets="@../styles/main_stylesheet.css" text="Submit">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" top="5.0" />
+                           </padding>
+                        </Button>
+                        <Text layoutX="42.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select the number of desks you wish to order" wrappingWidth="396.42266845703125">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Slider id="nrDesk_slider" fx:id="nrDesk_slider" blockIncrement="1.0" cache="true" layoutX="126.0" layoutY="172.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="0" prefHeight="63.0" prefWidth="186.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                        <Text id="nrDesk" layoutX="85.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="${nrDesk_slider.value}" textAlignment="CENTER" wrappingWidth="267.62249755859375" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="orderDesk_page2" prefHeight="442.0" prefWidth="428.0" style="-fx-background-color: #ffffff;">
+                     <children>
+
+                                                      <ImageView fx:id="imageView" fitHeight="63.0" fitWidth="77.0" layoutX="107.0" layoutY="356.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/shelf.png" />
+                           </image>
+                        </ImageView>
+
+                         <Label id="shelf_value" fx:id="shelf_value" alignment="CENTER" layoutX="206.0" layoutY="356.0" prefHeight="63.0" prefWidth="90.0" text="-" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="39.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imageView1" fitHeight="63.0" fitWidth="77.0" layoutX="107.0" layoutY="274.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/top.png" />
+                           </image>
+                        </ImageView>
+                        <Label id="top_value" fx:id="top_value" alignment="CENTER" layoutX="206.0" layoutY="274.0" prefHeight="63.0" prefWidth="90.0" text="-" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="39.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imageView2" fitHeight="63.0" fitWidth="77.0" layoutX="107.0" layoutY="190.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/leg.png" />
+                           </image>
+                        </ImageView>
+                        <Label id="legs_value" fx:id="legs_value" alignment="CENTER" layoutX="206.0" layoutY="190.0" prefHeight="63.0" prefWidth="90.0" text="-" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="39.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imageView3" fitHeight="63.0" fitWidth="77.0" layoutX="107.0" layoutY="106.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/wood.png" />
+                           </image>
+                        </ImageView>
+                        <Label id="wood_value" fx:id="wood_value" alignment="CENTER" layoutX="206.0" layoutY="106.0" prefHeight="63.0" prefWidth="90.0" text="-" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="39.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imageView4" fitHeight="63.0" fitWidth="77.0" layoutX="107.0" layoutY="27.0" pickOnBounds="true">
+                           <image>
+                              <Image backgroundLoading="true" url="@../images/desk.png" />
+                           </image>
+                        </ImageView>
+                        <Label id="desk_value" fx:id="desk_value" alignment="CENTER" layoutX="206.0" layoutY="27.0" prefHeight="63.0" prefWidth="90.0" text="-" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="39.0" />
+                           </font>
+                        </Label>
+                        <ProgressBar id="top_progress" fx:id="top_progress" layoutX="287.0" layoutY="297.0" prefHeight="18.0" prefWidth="121.0" progress="0.0" />
+                        <ProgressBar id="shelf_progress" fx:id="shelf_progress" layoutX="287.0" layoutY="379.0" prefHeight="18.0" prefWidth="121.0" progress="0.0" />
+                     </children>
+                  </Pane>
                </children>
             </Pane>
 
