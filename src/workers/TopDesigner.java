@@ -16,6 +16,7 @@ public class TopDesigner extends Worker {
     public int getSavedWood() {
         return savedWood.size();
     }
+
     @Override
     public void specificWork() {
         if (savedWood.size() == 4) {

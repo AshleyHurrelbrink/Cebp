@@ -13,13 +13,13 @@ public class ShelfAssembler extends Worker {
         super(prod);
     }
 
-
     public int getSavedWood() {
         return savedWood.size();
     }
+
     @Override
     public void specificWork() {
-        if (savedWood.size() == 6) {
+        if (savedWood.size() == 10) {
             try {
                 resources.add(new Shelf());
                 savedWood.clear();
