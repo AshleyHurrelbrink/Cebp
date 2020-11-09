@@ -19,7 +19,7 @@ public class ShelfAssembler extends Worker {
     }
     @Override
     public void specificWork() {
-        if (savedWood.size() == 10) {
+        if (savedWood.size() == 6) {
             try {
                 resources.add(new Shelf());
                 savedWood.clear();
@@ -34,6 +34,8 @@ public class ShelfAssembler extends Worker {
         else if (savedWood.size() < 10 && resources.size() > 2) {
             try {
                 Wood saved = (Wood)fetchResource(Wood.class);
+                if(saved == null) return;
+
                 savedWood.add(saved);
                 System.out.println("Gathering wood for a shelf. Current saved: "+ savedWood.size() + ". Remaining wood: " + prod.getWood() + "; Shelves: " + prod.getShelves());
                 Thread.sleep(2050);

@@ -33,12 +33,15 @@ public class TopDesigner extends Worker {
         else if (savedWood.size() < 4 && resources.size() > 1) {
             try {
                 Wood saved = (Wood)fetchResource(Wood.class);
+                if(saved == null) return;
+
                 savedWood.add(saved);
                 System.out.println("Gathering wood for a top. Current saved: "+ savedWood.size() + ". Remaining wood: " + prod.getWood() + "; Tops: " + prod.getTops());
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            } catch (ArrayIndexOutOfBoundsException e) {
+            }
+            catch (ArrayIndexOutOfBoundsException e) {
                 specificWork();
             }
         }

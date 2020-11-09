@@ -3,6 +3,8 @@ package workers;
 import main.Production;
 import resources.*;
 
+import javax.annotation.Resource;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -25,21 +27,24 @@ public abstract class Worker {
             }
         }).start();
     }
-    public DeskResource fetchResource(Class cls) {
+
+    public DeskResource fetchResource(Class cls) throws InterruptedException {
         if (resources.size() > 0) {
             DeskResource dr = null;
             do {
                 try {
                     dr = resources.get(new Random().nextInt(resources.size()));
                 } catch (IllegalArgumentException ex) {
-                    fetchResource(cls);
+                    return null;
                 }
             } while (!(cls.isInstance(dr)));
             resources.remove(dr);
             return dr;
         }
         return null;
+
     }
+
     public abstract void specificWork();
 
 }
