@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.MainController">
    <children>
       
       <HBox prefHeight="442.0" prefWidth="687.0">
@@ -57,7 +57,6 @@
             <!--pages-->
             <Pane prefHeight="442.0" prefWidth="467.0">
                <children>
-                  <Pane fx:id="home_page" prefHeight="442.0" prefWidth="428.0" style="-fx-background-color: #187bcd;" />
                   <Pane fx:id="orderDesk_page1" layoutX="-1.0" prefHeight="442.0" prefWidth="439.0" style="-fx-background-color: #ffffff;">
                      <children>
                         <Button id="sumbitNrDesks_button" fx:id="submitNrDesk_button" alignment="BOTTOM_LEFT" layoutX="107.0" layoutY="266.0" mnemonicParsing="false" onAction="#onSubmitNrDeskButtonClick" prefHeight="36.0" prefWidth="223.0" styleClass="button_menu" stylesheets="@../styles/main_stylesheet.css" text="Submit">
@@ -132,6 +131,21 @@
                         <ProgressBar id="shelf_progress" fx:id="shelf_progress" layoutX="287.0" layoutY="379.0" prefHeight="18.0" prefWidth="121.0" progress="0.0" />
                      </children>
                   </Pane>
+                  <Pane fx:id="home_page" prefHeight="442.0" prefWidth="428.0" style="-fx-background-color: #187bcd;">
+                     <children>
+                        <Text fill="WHITE" layoutX="54.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO YOUR VERY OWN DESK CREATOR!">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="146.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOW IT WORKS?">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="42.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Also, to make sure that the process is as transparent as possible after placing your order, you will be able to follow the status of your order in real time." textAlignment="CENTER" wrappingWidth="344.3118896484375" />
+                        <Text fill="WHITE" layoutX="27.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Need a new desk? Simply choose the number of desks you wish to order, and we will take care of the rest. " textAlignment="CENTER" wrappingWidth="373.64520263671875" />
+                     </children></Pane>
                </children>
             </Pane>
 
